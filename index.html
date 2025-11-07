@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestPlatform - Образовательная платформа тестирования</title>
+    <meta name="description" content="Создавайте и проходите тесты с помощью искусственного интеллекта. Удобная платформа для учителей и учеников.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    TestPlatform
+                </div>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Возможности</a>
+                    <a href="#how-it-works" class="nav-link">Как это работает</a>
+                    <a href="#roles" class="nav-link">Для кого</a>
+                    <a href="#about" class="nav-link">О проекте</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Войти</button>
+                    <button class="btn btn-primary" id="registerBtn">Начать бесплатно</button>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">
+                        <span>🚀 Новое поколение обучения</span>
+                    </div>
+                    <h1>Образовательная платформа для создания и прохождения тестов</h1>
+                    <p class="hero-description">
+                        Используйте искусственный интеллект для генерации тестов по любым темам. 
+                        Экономьте время на подготовке и получайте детальную аналитику успеваемости.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" id="heroRegisterBtn">
+                            Попробовать бесплатно
+                        </button>
+                        <button class="btn btn-outline btn-large" id="watchDemoBtn">
+                            📹 Смотреть демо
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">тестов создано</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">активных учителей</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">удовлетворенных пользователей</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="platform-preview">
+                        <div class="preview-card teacher-preview">
+                            <div class="preview-header">
+                                <span class="preview-badge teacher">👨‍🏫 Учитель</span>
+                            </div>
+                            <div class="preview-content">
+                                <h4>Создание теста</h4>
+                                <p>Математика 7 класс</p>
+                                <div class="preview-stats">
+                                    <span>10 вопросов</span>
+                                    <span>🟡 Средний</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-card student-preview">
+                            <div class="preview-header">
+                                <span class="preview-badge student">👨‍🎓 Ученик</span>
+                            </div>
+                            <div class="preview-content">
+                                <h4>Результат теста</h4>
+                                <p>8/10 правильных ответов</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Мощные возможности для обучения</h2>
+                <p class="section-subtitle">Все, что нужно для эффективного образовательного процесса</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-генерация тестов</h3>
+                    <p>Автоматическое создание тестов по любой теме с помощью Yandex GPT. Просто укажите тему и получите готовый тест за секунды.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Управление классами</h3>
+                    <p>Создавайте виртуальные классы, приглашайте студентов по кодам доступа и легко управляйте учебными группами.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Детальная аналитика</h3>
+                    <p>Отслеживайте прогресс учащихся, выявляйте проблемные области и получайте подробные отчеты по результатам.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Мультиплатформенность</h3>
+                    <p>Работайте через веб-сайт или Telegram-бота. Ученики могут проходить тесты с любого устройства в удобное время.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Гибкие настройки</h3>
+                    <p>Настраивайте сложность тестов, количество вопросов и время выполнения под конкретные учебные задачи.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Разбор ошибок</h3>
+                    <p>Ученики видят, где ошиблись, и получают объяснения правильных ответов для лучшего усвоения материала.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Как это работает</h2>
+                <p class="section-subtitle">Всего 3 простых шага к эффективному обучению</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Создайте тест</h3>
+                        <p>Укажите тему, количество вопросов и уровень сложности. Наш AI сгенерирует качественный тест автоматически.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Назначьте классу</h3>
+                        <p>Создайте класс и поделитесь кодом доступа с учениками. Назначьте тест выбранной группе учащихся.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Анализируйте результаты</h3>
+                        <p>Просматривайте детальную статистику по каждому ученику, отслеживайте прогресс и выявляйте слабые места.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles Section -->
+    <section id="roles" class="roles">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Для кого создана платформа</h2>
+                <p class="section-subtitle">Индивидуальный подход для каждой роли</p>
+            </div>
+            <div class="roles-container">
+                <div class="role-card teacher">
+                    <div class="role-header">
+                        <div class="role-icon">👨‍🏫</div>
+                        <h3>Для учителей</h3>
+                    </div>
+                    <ul class="role-features">
+                        <li>✅ Создание тестов за минуты</li>
+                        <li>✅ Управление классами и учениками</li>
+                        <li>✅ Детальная аналитика результатов</li>
+                        <li>✅ Настройка уровня сложности</li>
+                        <li>✅ Экономия времени на подготовке</li>
+                        <li>✅ Экспорт результатов</li>
+                    </ul>
+                    <div class="role-actions">
+                        <button class="btn btn-primary teacher-register">Начать как учитель</button>
+                    </div>
+                </div>
+                <div class="role-card student">
+                    <div class="role-header">
+                        <div class="role-icon">👨‍🎓</div>
+                        <h3>Для учеников</h3>
+                    </div>
+                    <ul class="role-features">
+                        <li>✅ Прохождение тестов в удобное время</li>
+                        <li>✅ Мгновенные результаты</li>
+                        <li>✅ Подробный разбор ошибок</li>
+                        <li>✅ Отслеживание прогресса</li>
+                        <li>✅ Доступ с любого устройства</li>
+                        <li>✅ Интерактивный интерфейс</li>
+                    </ul>
+                    <div class="role-actions">
+                        <button class="btn btn-primary student-register">Присоединиться как ученик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Что говорят пользователи</h2>
+                <p class="section-subtitle">Более 500 учителей уже используют нашу платформу</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"TestPlatform кардинально изменила подход к тестированию в нашей школе. Экономия времени колоссальная!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">М</div>
+                        <div class="author-info">
+                            <div class="author-name">Марина Иванова</div>
+                            <div class="author-role">Учитель математики</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Ученикам нравится современный интерфейс, а мне - детальная аналитика. Идеальное сочетание!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">А</div>
+                        <div class="author-info">
+                            <div class="author-name">Алексей Петров</div>
+                            <div class="author-role">Преподаватель информатики</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Теперь готовлюсь к экзаменам с удовольствием. Подробный разбор ошибок помогает лучше понять материал."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">С</div>
+                        <div class="author-info">
+                            <div class="author-name">София Козлова</div>
+                            <div class="author-role">Ученица 10 класса</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Готовы начать?</h2>
+                <p>Присоединяйтесь к сообществу современных педагогов и учеников</p>
+                <div class="cta-actions">
+                    <button class="btn btn-primary btn-large" id="ctaRegisterBtn">Создать аккаунт</button>
+                    <button class="btn btn-outline btn-large" id="learnMoreBtn">Узнать больше</button>
+                </div>
+                <div class="cta-features">
+                    <span>✅ Бесплатно для учителей</span>
+                    <span>✅ Без ограничений по тестам</span>
+                    <span>✅ Поддержка 24/7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">🎯</span>
+                        TestPlatform
+                    </div>
+                    <p class="footer-description">
+                        Современная образовательная платформа для создания и прохождения тестов с использованием искусственного интеллекта.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Платформа</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Возможности</a></li>
+                        <li><a href="#how-it-works">Как это работает</a></li>
+                        <li><a href="#roles">Для кого</a></li>
+                        <li><a href="#">Цены</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Поддержка</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#">Документация</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Сообщить о проблеме</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Компания</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Партнеры</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2024 TestPlatform. Все права защищены.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Конфиденциальность</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modals -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Регистрация</h2>
+                <button class="close-btn" id="closeRegisterModal">&times;</button>
+            </div>
+            <div class="role-selection">
+                <div class="role-option active" data-role="teacher">
+                    <div class="role-option-icon">👨‍🏫</div>
+                    <div class="role-option-text">
+                        <div class="role-title">Учитель</div>
+                        <div class="role-description">Создавайте тесты и управляйте классами</div>
+                    </div>
+                </div>
+                <div class="role-option" data-role="student">
+                    <div class="role-option-icon">👨‍🎓</div>
+                    <div class="role-option-text">
+                        <div class="role-title">Ученик</div>
+                        <div class="role-description">Присоединяйтесь к классам и проходите тесты</div>
+                    </div>
+                </div>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regUsername">Имя пользователя</label>
+                    <input type="text" id="regUsername" class="form-control" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" class="form-control" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Пароль</label>
+                    <input type="password" id="regPassword" class="form-control" placeholder="Не менее 6 символов" required>
+                </div>
+                <div class="form-group" id="teacherCodeGroup" style="display: none;">
+                    <label for="teacherCode">Код преподавателя (если есть)</label>
+                    <input type="text" id="teacherCode" class="form-control" placeholder="Опционально">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Создать аккаунт
+                    </button>
+                </div>
+                <div class="auth-footer">
+                    <p>Уже есть аккаунт? <a href="#" id="switchToLogin">Войти</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Вход в аккаунт</h2>
+                <button class="close-btn" id="closeLoginModal">&times;</button>
+            </div>
+            <div class="role-selection">
+                <div class="role-option active" data-role="teacher">
+                    <div class="role-option-icon">👨‍🏫</div>
+                    <div class="role-option-text">
+                        <div class="role-title">Учитель</div>
+                    </div>
+                </div>
+                <div class="role-option" data-role="student">
+                    <div class="role-option-icon">👨‍🎓</div>
+                    <div class="role-option-text">
+                        <div class="role-title">Ученик</div>
+                    </div>
+                </div>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Имя пользователя</label>
+                    <input type="text" id="loginUsername" class="form-control" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Пароль</label>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="Введите ваш пароль" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Войти в аккаунт
+                    </button>
+                </div>
+                <div class="auth-footer">
+                    <p>Нет аккаунта? <a href="#" id="switchToRegister">Зарегистрироваться</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Demo Modal -->
+    <div class="modal" id="demoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Демонстрация платформы</h2>
+                <button class="close-btn" id="closeDemoModal">&times;</button>
+            </div>
+            <div class="demo-content">
+                <div class="demo-video-placeholder">
+                    <div class="video-icon">📹</div>
+                    <p>Видео демонстрация платформы</p>
+                    <button class="btn btn-primary">Смотреть демо</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

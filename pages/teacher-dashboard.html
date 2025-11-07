@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель учителя - TestPlatform</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">TestPlatform</div>
+                <div class="nav-links">
+                    <a href="#classes">Мои классы</a>
+                    <a href="#tests">Мои тесты</a>
+                    <a href="#results">Результаты</a>
+                </div>
+                <div class="user-menu">
+                    <span id="userName">Учитель</span>
+                    <button class="btn btn-outline" id="logoutBtn">Выйти</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <!-- Статистика -->
+            <section class="stats-section">
+                <h2>Обзор</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍🏫</div>
+                        <div class="stat-info">
+                            <h3 id="classesCount">0</h3>
+                            <p>Классов</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                            <h3 id="testsCount">0</h3>
+                            <p>Тестов</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3 id="studentsCount">0</h3>
+                            <p>Учеников</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <h3 id="completedTests">0</h3>
+                            <p>Пройдено тестов</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Быстрые действия -->
+            <section class="quick-actions">
+                <h2>Быстрые действия</h2>
+                <div class="actions-grid">
+                    <button class="action-card" id="createClassBtn">
+                        <div class="action-icon">➕</div>
+                        <h3>Создать класс</h3>
+                        <p>Создайте новый класс и получите код доступа</p>
+                    </button>
+                    <button class="action-card" id="createTestBtn">
+                        <div class="action-icon">🤖</div>
+                        <h3>Создать тест</h3>
+                        <p>Сгенерировать тест с помощью AI</p>
+                    </button>
+                    <button class="action-card" id="viewResultsBtn">
+                        <div class="action-icon">📊</div>
+                        <h3>Результаты</h3>
+                        <p>Просмотреть результаты учащихся</p>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Мои классы -->
+            <section id="classes" class="classes-section">
+                <div class="section-header">
+                    <h2>Мои классы</h2>
+                    <button class="btn btn-primary" id="addClassBtn">Добавить класс</button>
+                </div>
+                <div class="classes-grid" id="classesGrid">
+                    <!-- Классы будут загружены через JavaScript -->
+                </div>
+            </section>
+
+            <!-- Мои тесты -->
+            <section id="tests" class="tests-section">
+                <div class="section-header">
+                    <h2>Мои тесты</h2>
+                    <button class="btn btn-primary" id="addTestBtn">Создать тест</button>
+                </div>
+                <div class="tests-grid" id="testsGrid">
+                    <!-- Тесты будут загружены через JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Модальное окно создания класса -->
+    <div class="modal" id="createClassModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Создание класса</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="createClassForm">
+                <div class="form-group">
+                    <label for="className">Название класса</label>
+                    <input type="text" id="className" class="form-control" placeholder="Например: 7А-2023" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline cancel-btn">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Создать класс</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно создания теста -->
+    <div class="modal" id="createTestModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Создание теста</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="createTestForm">
+                <div class="form-group">
+                    <label for="testTopic">Тема теста</label>
+                    <input type="text" id="testTopic" class="form-control" placeholder="Например: Математика 7 класс" required>
+                </div>
+                <div class="form-group">
+                    <label for="testQuestions">Количество вопросов</label>
+                    <select id="testQuestions" class="form-control" required>
+                        <option value="5">5 вопросов</option>
+                        <option value="10">10 вопросов</option>
+                        <option value="15">15 вопросов</option>
+                        <option value="20">20 вопросов</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="testDifficulty">Сложность</label>
+                    <select id="testDifficulty" class="form-control" required>
+                        <option value="легкий"> Легкий</option>
+                        <option value="средний"> Средний</option>
+                        <option value="сложный"> Сложный</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="testClass">Назначить классу (опционально)</label>
+                    <select id="testClass" class="form-control">
+                        <option value="">Не назначать</option>
+                        <!-- Классы будут загружены через JavaScript -->
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline cancel-btn">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Создать тест</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/teacher-dashboard.js"></script>
+</body>
+</html>

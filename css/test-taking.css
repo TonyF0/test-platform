@@ -1,0 +1,430 @@
+/* Стили для страницы прохождения теста */
+.test-container {
+    padding: 2rem 0;
+    min-height: calc(100vh - 80px);
+    background: #f8f9fa;
+}
+
+.test-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.test-info h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.test-meta {
+    display: flex;
+    gap: 2rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Прогресс-бар */
+.progress-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+/* Вопросы */
+.question-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.question-card {
+    padding: 2rem;
+}
+
+.question-card h2 {
+    margin: 0 0 2rem 0;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--dark-color);
+}
+
+/* Варианты ответов */
+.options-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.option-item {
+    padding: 1rem 1.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: white;
+}
+
+.option-item:hover {
+    border-color: var(--primary-color);
+    background: #f8f9fa;
+}
+
+.option-item.selected {
+    border-color: var(--primary-color);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.option-text {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Навигация */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Таймер */
+#timer {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Модальные окна для теста */
+.results-content {
+    max-width: 600px;
+}
+
+.result-summary {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.result-score {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.score-total {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.result-percentage {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.wrong-answers-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.wrong-answer-item {
+    background: #fff5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.wrong-question {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.wrong-answer,
+.correct-answer {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.wrong-answer {
+    color: var(--accent-color);
+}
+
+.correct-answer {
+    color: var(--secondary-color);
+}
+
+/* Анимации */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .test-info {
+        text-align: center;
+    }
+    
+    .test-meta {
+        justify-content: center;
+    }
+    
+    .question-card {
+        padding: 1.5rem;
+    }
+    
+    .question-card h2 {
+        font-size: 1.1rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+    }
+    
+    .navigation-buttons .btn {
+        width: 100%;
+    }
+    
+    .score {
+        font-size: 2rem;
+    }
+}
+/* Анимации для тестирования */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.question-card {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Стили для выбранных ответов */
+.option-item.selected {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+    transform: scale(1.02);
+}
+
+/* Анимация пульсации */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Индикатор времени */
+#timer {
+    background: var(--dark-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+/* Подсказки по горячим клавишам */
+.keyboard-hints {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    z-index: 1000;
+}
+
+.keyboard-hints h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.keyboard-hints ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.keyboard-hints li {
+    margin: 0.25rem 0;
+}
+
+/* Прогресс-бар с анимацией */
+.progress-fill {
+    transition: width 0.5s ease-in-out;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .test-info {
+        text-align: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .test-meta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .question-card {
+        padding: 1rem;
+    }
+    
+    .question-card h2 {
+        font-size: 1.1rem;
+    }
+    
+    .option-item {
+        padding: 0.75rem 1rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .navigation-buttons .btn {
+        width: 100%;
+    }
+    
+    .keyboard-hints {
+        display: none; /* Скрываем подсказки на мобильных */
+    }
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    .test-container {
+        background: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    .question-section,
+    .progress-section {
+        background: #2d2d2d;
+        color: #ffffff;
+    }
+    
+    .option-item {
+        background: #3d3d3d;
+        border-color: #555;
+        color: #ffffff;
+    }
+    
+    .option-item:hover {
+        background: #4d4d4d;
+        border-color: var(--primary-color);
+    }
+    
+    .option-item.selected {
+        background: linear-gradient(135deg, rgba(52, 152, 219, 0.3), rgba(46, 204, 113, 0.3));
+    }
+}
+
+/* Анимация загрузки */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Валидация ответов */
+.option-item.correct {
+    border-color: var(--secondary-color);
+    background: rgba(46, 204, 113, 0.1);
+}
+
+.option-item.incorrect {
+    border-color: var(--accent-color);
+    background: rgba(231, 76, 60, 0.1);
+}

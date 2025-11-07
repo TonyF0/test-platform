@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прохождение теста - TestPlatform</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/test-taking.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">TestPlatform</div>
+                <div class="test-info">
+                    <h1 id="testTopic">Название теста</h1>
+                    <div class="test-meta">
+                        <span id="testDifficulty">Сложность: средний</span>
+                        <span id="timer">00:00</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="test-container">
+        <div class="container">
+            <!-- Прогресс-бар -->
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span>Вопрос <span id="currentQuestion">1</span> из <span id="totalQuestions">10</span></span>
+                    <span id="progressPercent">10%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Область вопроса -->
+            <section class="question-section">
+                <div class="question-card">
+                    <h2 id="questionText">Текст вопроса будет здесь...</h2>
+                    
+                    <!-- Варианты ответов -->
+                    <div class="options-grid" id="optionsGrid">
+                        <!-- Варианты ответов будут загружены через JavaScript -->
+                    </div>
+
+                    <!-- Навигация -->
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" id="prevBtn" disabled>Назад</button>
+                        <button class="btn btn-primary" id="nextBtn">Следующий вопрос</button>
+                        <button class="btn btn-accent" id="finishBtn" style="display: none;">Завершить тест</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Модальное окно подтверждения завершения -->
+    <div class="modal" id="finishModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Завершение теста</h2>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены, что хотите завершить тест? После завершения вы не сможете изменить ответы.</p>
+                <div class="answers-summary">
+                    <p>Отвечено вопросов: <span id="answeredCount">0</span> из <span id="totalCount">0</span></p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelFinishBtn">Продолжить</button>
+                <button class="btn btn-accent" id="confirmFinishBtn">Завершить тест</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно результатов -->
+    <div class="modal" id="resultsModal">
+        <div class="modal-content results-content">
+            <div class="modal-header">
+                <h2>Результаты теста</h2>
+            </div>
+            <div class="modal-body">
+                <div class="result-summary">
+                    <div class="result-score">
+                        <span class="score" id="finalScore">0</span>
+                        <span class="score-total">из <span id="finalTotal">0</span></span>
+                    </div>
+                    <div class="result-percentage" id="resultPercentage">0%</div>
+                </div>
+                
+                <div class="wrong-answers" id="wrongAnswersSection" style="display: none;">
+                    <h3>Ошибки:</h3>
+                    <div class="wrong-answers-list" id="wrongAnswersList">
+                        <!-- Список ошибок будет загружен через JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="backToDashboardBtn">Вернуться в кабинет</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/test-taking.js"></script>
+</body>
+</html>

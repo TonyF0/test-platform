@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель ученика - TestPlatform</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">TestPlatform</div>
+                <div class="nav-links">
+                    <a href="#available-tests">Доступные тесты</a>
+                    <a href="#my-results">Мои результаты</a>
+                </div>
+                <div class="user-menu">
+                    <span id="userName">Ученик</span>
+                    <button class="btn btn-outline" id="logoutBtn">Выйти</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <!-- Статистика ученика -->
+            <section class="stats-section">
+                <h2>Мой прогресс</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                            <h3 id="availableTestsCount">0</h3>
+                            <p>Доступных тестов</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <h3 id="completedTestsCount">0</h3>
+                            <p>Пройдено тестов</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-info">
+                            <h3 id="averageScore">0%</h3>
+                            <p>Средний результат</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍🏫</div>
+                        <div class="stat-info">
+                            <h3 id="className">-</h3>
+                            <p>Мой класс</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Доступные тесты -->
+            <section id="available-tests" class="tests-section">
+                <div class="section-header">
+                    <h2>Доступные тесты</h2>
+                </div>
+                <div class="tests-grid" id="availableTestsGrid">
+                    <!-- Тесты будут загружены через JavaScript -->
+                </div>
+            </section>
+
+            <!-- Мои результаты -->
+            <section id="my-results" class="results-section">
+                <div class="section-header">
+                    <h2>Мои результаты</h2>
+                </div>
+                <div class="results-list" id="resultsList">
+                    <!-- Результаты будут загружены через JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/student-dashboard.js"></script>
+</body>
+</html>
